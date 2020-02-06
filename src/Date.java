@@ -10,6 +10,7 @@ public class Date
    
    public Date(String d)
    {
+	   StringTokenizer a = new StringTokenizer();
       //use StringTokenizer to parse the String and create a Date object     
    }
    
@@ -26,7 +27,8 @@ public class Date
    @Override
    public String toString()
    {
-       //use the format "month/day/year"
+	   //use the format "month/day/year"
+       return this.month + "/" + this.day + "/" + this.year;
    }
    
    @Override

@@ -9,12 +9,13 @@ public class TeamMember
    
    public TeamMember(String nm, Date date)
    {
-       
+       this.name = nm;
+       this.startDate = date;
    }
    
    public Date getStartDate()
    {
-      
+      return this.startDate;
    }
    
    public boolean equals(Object obj)
@@ -25,6 +26,7 @@ public class TeamMember
    public String toString()
    {
        //name + " " + startDate;
+	   return this.name + " " + this.startDate;
    }
 
    public static void main(String [] args)
