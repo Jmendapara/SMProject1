@@ -10,13 +10,16 @@ public class Date
    
    public Date(String d)
    {
-	   StringTokenizer a = new StringTokenizer();
+	   StringTokenizer tempDate = new StringTokenizer(d);
       //use StringTokenizer to parse the String and create a Date object     
    }
    
    public Date(Date d)
    {
       //this is a constructor
+	   this.day = d.day;
+	   this.month = d.month;
+	   this.year = d.year;
    }      
    
    public boolean isValid()
@@ -34,7 +37,7 @@ public class Date
    @Override
    public boolean equals(Object obj)
    {
-       
+	   
    }  
 }
 
