@@ -2,7 +2,7 @@ import java.util.StringTokenizer;
 
 /**
   
- @author  Jay Mendapara & Raina Gupta asdfghj
+ @author  Jay Mendapara & Raina Gupta
  */
 public class Date 
 {
