@@ -1,6 +1,6 @@
 /**
   
- @author  Jay Mendapara    poochie  yeld==e                      and RAINA
+ @author  Jay Mendapara & Raina Gupta
  */
 public class Date 
 {
@@ -14,6 +14,10 @@ public class Date
       //use StringTokenizer to parse the String and create a Date object    
 	   
    }
+   /**
+    * 
+    * @param d
+    */
    
    public Date(Date d)
    {
