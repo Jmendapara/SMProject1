@@ -31,7 +31,14 @@ public class Team
    
    public void add(TeamMember m)
    {     
-            
+            for(int i = team.length; i >= 0; i --) {
+            	
+            	if(team[i] == null) {
+            		team[i] = m;
+            		return;
+            	}
+            	
+            }
    }
    
    public boolean remove(TeamMember m)
