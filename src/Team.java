@@ -10,6 +10,8 @@ public class Team
    private TeamMember [] team;
    private int numMembers;
    
+   
+   //this is Team class
    public Team()
    {
 	  team = new TeamMember[GROW_SIZE];
