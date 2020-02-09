@@ -16,8 +16,16 @@ public class Team
    
    private int find(TeamMember m)
    {
+       for (int i = 0; i < team.length; i++) {
+    	   
+    	   if (team[i] == m) {
+    		   return i;
+    	   }
+    	   
+       }
 
 	          
+       return -1;
    }
    
    private void grow()
@@ -32,10 +40,14 @@ public class Team
    
    public void add(TeamMember m)
    {     
-            for(int i = team.length; i >= 0; i --) {
+            for(int i = team.length-1; i >= 0; i --) {
             	
-            	if(team[i] == null) {
-            		team[i] = m;
+            	if(team[i] != null) {
+            		if (i == team.length-1) {
+            			System.out.println("You have reached the maximum number of team members");
+            			return;
+            		}
+            		team[i+1] = m;
             		return;
             	}
             	
