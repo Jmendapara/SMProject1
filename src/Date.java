@@ -10,6 +10,7 @@ public class Date
    
    public Date(String d)
    {
+	   StringTokenizer tempDate = new StringTokenizer(d);
       //use StringTokenizer to parse the String and create a Date object     
    }
    /**
@@ -20,6 +21,9 @@ public class Date
    public Date(Date d)
    {
       //this is a constructor
+	   this.day = d.day;
+	   this.month = d.month;
+	   this.year = d.year;
    }      
    
    public boolean isValid()
@@ -30,13 +34,14 @@ public class Date
    @Override
    public String toString()
    {
-       //use the format "month/day/year"
+	   //use the format "month/day/year"
+       return this.month + "/" + this.day + "/" + this.year;
    }
    
    @Override
    public boolean equals(Object obj)
    {
-       
+	   
    }  
 }
 

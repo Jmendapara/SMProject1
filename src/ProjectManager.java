@@ -5,26 +5,43 @@
  
 public class ProjectManager
 {
+	
    Scanner stdin;
    Team cs213;
-   public void run()
-   {
-       
+   
+   public void run(){
+	   
       boolean done = false;
-      while ( !done )
+      
+      while (!done)
       {
          String command = stdin.next();
-         switch (                )  
+         switch (command.charAt(0))  
          {   
-            case 'A': add();
-		      break; 
-            case  
-            case               
-            case     
-            default: //deal with bad command here 
+            case 'A': 
+            	add();
+            	break;
+            	
+            case 'R':
+            	remove();
+            	break;
+            	
+            case 'P':
+            	print();
+            	break;
+            	
+            case 'Q':
+            	done = true;
+            	break;
+            	
+            default: 
+            	System.out.println("Command '"+ command.charAt(0) +"' is not supported!"); //deal with bad command here 
          }  
       }
-      //write java code before you terminate the program
+      
+      print();
+      System.out.println("The team is ready to go!");
+      
    } //run()
    
    private void add()
@@ -42,6 +59,15 @@ public class ProjectManager
    
    private void print()
    {
-      //must check if the team has 0 members. 
+	   
+	   //must check if the team has 0 members. 
+	   if(cs213.isEmpty()) {
+		   System.out.println("We have 0 team members!");
+	   }
+	   
+	   else {
+		   cs213.print();
+	   }
+	   
    }   
 } //ProjectManager
