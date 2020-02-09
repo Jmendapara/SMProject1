@@ -6,7 +6,6 @@ import java.util.StringTokenizer;
  */
 public class Date 
 {
-<<<<<<< HEAD
 	private int  day;
 	private int  month;
 	private int  year;
@@ -191,73 +190,6 @@ public class Date
 	@Override
 	public boolean equals(Object obj)
 	{
-=======
-   private int  day;
-   private int  month;
-   private int  year;
-   
-   public Date(String d)
-   {
-	   StringTokenizer tempDate = new StringTokenizer(d);
-      //use StringTokenizer to parse the String and create a Date object    
-	   
-      //use StringTokenizer to parse the String and create a Date object
-	   
-	   StringTokenizer st = new StringTokenizer(d, "/");
-	   
-	   int counter = 0;
-	   
-	   while (st.hasMoreTokens()) {
-		   
-		   switch (counter) {
-		   
-		   case (0):
-			   this.month = Integer.parseInt(st.nextToken("/"));
-		   
-		   case (1):
-			   this.day = Integer.parseInt(st.nextToken("/"));
-		  
-		   case (2):
-			   this.year = Integer.parseInt(st.nextToken("/"));
-		   
-		   case (3):
-			   //correct error statement? who knows
-			   System.out.println("Invalid date");
-		   
-		   }
-		   
-	   }
-   }
-   /**
-    * 
-    * @param d
-    */
-   
-   public Date(Date d)
-   {
-      //this is a constructor
-	   this.day = d.day;
-	   this.month = d.month;
-	   this.year = d.year;
-   }      
-   
-   public boolean isValid()
-   {
-       
-   }
-   
-   @Override
-   public String toString()
-   {
-       //use the format "month/day/year"
-	   
-	   return (this.month + "/" + this.day + "/" + this.year);
-   }
-   
-   @Override
-   public boolean equals(Object obj)
-   {
->>>>>>> branch 'master' of https://github.com/Jmendapara/SMProject1.git
 		if(obj instanceof Date){	
 
 			//obj.getClass() == (new TeamMember(name, startDate).getClass())
