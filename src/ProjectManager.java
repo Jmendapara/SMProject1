@@ -73,6 +73,8 @@ public class ProjectManager
 
 		String name;
 		Date date;
+		boolean valid;
+
 
 		/*
 		if(!stdin.hasNext()) {
@@ -113,7 +115,14 @@ public class ProjectManager
 
 		date = new Date(token);
 
-
+		valid = date.isValid();
+		
+		if(!valid) {
+			
+			return;
+			
+		}
+		
 		currMem = new TeamMember(name, date);
 
 		System.out.println(currMem.toString());
