@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
   
  @author  
@@ -13,9 +15,19 @@ public class ProjectManager
 	   
       boolean done = false;
       
+      stdin = new Scanner(System.in);
+      
+      System.out.println("Project Manager Started!");
+      System.out.println("Please enter your command.");
+
+      
       while (!done)
       {
+    	  
          String command = stdin.next();
+         System.out.println(command);
+         
+         
          switch (command.charAt(0))  
          {   
             case 'A': 
