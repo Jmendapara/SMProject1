@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /**
 
- @author  
+ @author  Jay Mendapara and Raina Gupta
  */
 
 public class ProjectManager
