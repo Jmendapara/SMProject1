@@ -1,5 +1,5 @@
 /**
-
+ * This class creates a TeamMember object and compares TeamMember objects with each other. 
  @author  Raina Gupta & Jay Mendapara
  */
 public class TeamMember 

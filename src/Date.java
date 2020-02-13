@@ -10,7 +10,8 @@ public class Date
 	private int  month;
 	private int  year;
 
-
+	private StringTokenizer st;
+	
 	/**
 	 * 
 	 * @param d
@@ -19,7 +20,7 @@ public class Date
 	{
 		//use StringTokenizer to parse the String and create a Date object
 
-		StringTokenizer st = new StringTokenizer(d, "/");
+		st = new StringTokenizer(d, "/");
 
 		int counter = 0;
 
@@ -28,21 +29,35 @@ public class Date
 			switch (counter) {
 
 			case (0):
-				this.month = Integer.parseInt(st.nextToken("/"));
+				this.month = Integer.parseInt(st.nextToken());
+				counter ++;
+				System.out.println(this.month);
 
 			case (1):
-				this.day = Integer.parseInt(st.nextToken("/"));
+				this.day = Integer.parseInt(st.nextToken());
+				counter ++;
+				System.out.println(this.day);
+
 
 			case (2):
-				this.year = Integer.parseInt(st.nextToken("/"));
-
-			case (3):
-				//correct error statement? who knows
-				System.out.println("Invalid date");
-
+				this.year = Integer.parseInt(st.nextToken());
+				System.out.println(this.year);
+				break;
 			}
 
 		}
+		
+		
+		/*
+		if (st.hasMoreTokens() || !isValid()) {
+			
+			System.out.println("This is an invalid date.");
+			
+
+			
+		}
+		*/
+		
 	}
 
 	/**
@@ -66,6 +81,10 @@ public class Date
 	 */
 	public boolean isValid()
 	{
+		if (st.hasMoreTokens()) {
+			System.out.println("This is an invalid date.");
+			return false;
+		}
 
 		boolean leapYear = false;
 

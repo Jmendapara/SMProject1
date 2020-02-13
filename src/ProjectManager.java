@@ -1,8 +1,11 @@
 import java.util.Scanner;
 
 /**
+ * ProjectManager class scans the user's input and parses through it- reads command and validates date.
+ * Additionally, it adds and removes a TeamMember from a team.
 
- @author  Jay Mendapara and Raina Gupta  
+
+ @author Jay Mendapara & Raina Gupta
  */
 
 public class ProjectManager
@@ -33,10 +36,14 @@ public class ProjectManager
 			{   
 			case 'A':
 
-				instantiateTeamMember(command);
-
-				//add();
-				break;
+				if (instantiateTeamMember(command)) {
+				
+					add();
+					System.out.println("Team Member added succesfully");
+					print();
+				}
+				
+				//break;
 
 			case 'R':
 
@@ -69,13 +76,12 @@ public class ProjectManager
 	 * 
 	 * @param command
 	 */
-	private void instantiateTeamMember(String command) {
+	private boolean instantiateTeamMember(String command) {
 
 		String name;
 		Date date;
 		boolean valid;
-
-
+		
 		/*
 		if(!stdin.hasNext()) {
 			System.out.println("Your entry must be of the following format: Command Name Month/Day/Year.");
@@ -117,16 +123,16 @@ public class ProjectManager
 
 		valid = date.isValid();
 		
-		if(!valid) {
+		if(valid) {	
 			
-			return;
+			currMem = new TeamMember(name, date);
+
+			System.out.println(currMem.toString());
 			
+			return true;
 		}
-		
-		currMem = new TeamMember(name, date);
 
-		System.out.println(currMem.toString());
-
+		return false;
 
 	}
 
@@ -136,11 +142,16 @@ public class ProjectManager
 		//must check if the date is valid
 		//must call the contains() method to check if a given 
 		//team member is in the team already
+		
+		
+		
 	}
 
 	private void remove()
 	{
 		//must check if the date is valid
+		
+		cs213.remove(currMem);
 
 	}
 
