@@ -4,6 +4,7 @@ import java.util.Scanner;
  * ProjectManager class scans the user's input and parses through it- reads command and validates date.
  * Additionally, it adds and removes a TeamMember from a team.
 
+
  @author Jay Mendapara & Raina Gupta
  */
 
