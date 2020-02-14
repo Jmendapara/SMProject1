@@ -39,7 +39,7 @@ public class ProjectManager
 				
 					add();
 					System.out.println("Team Member added succesfully");
-					print();
+					//print();
 				}
 				
 				//break;

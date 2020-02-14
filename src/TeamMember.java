@@ -13,7 +13,7 @@ public class TeamMember
 		this.startDate = date;
 
 	}
-
+	
 	public Date getStartDate()
 	{
 		return this.startDate;
@@ -54,6 +54,16 @@ public class TeamMember
 	{
 		//testbed main; you must include test cases that exercise 
 		//the constructor and all methods in this class.
+		
+		Date testDate = new Date("05/32/1999");
+		
+		System.out.println("Date toString : " + testDate.toString()); //TEST - Date toString
+		
+		TeamMember test = new TeamMember("Raina", testDate); //TEST - TeamMember constructor
+		
+		
+		
+		
 		
 		
 	}
