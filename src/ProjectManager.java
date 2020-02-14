@@ -20,6 +20,8 @@ public class ProjectManager
 	public void run(){
 
 		boolean done = false;
+		
+		cs213 = new Team();
 
 		System.out.println("Welcome!");
 		System.out.println("Your entry must be of the following format: Command (A, R, P, Q) Name Month/Day/Year.");
@@ -40,15 +42,18 @@ public class ProjectManager
 				
 					add();
 					System.out.println("Team Member added succesfully");
-					//print();
-				}
+					print();
+				}*/
 				
 				//break;
 
 			case 'R':
 
-				instantiateTeamMember(command);
-
+				String nameRemove = stdin.next();
+				Date dateRemove = new Date(stdin.next());
+				
+				currMem = new TeamMember(nameRemove, dateRemove);
+				
 				remove();
 				break;
 
@@ -139,10 +144,25 @@ public class ProjectManager
 
 	private void add()
 	{
+		
 		//must check if the date is valid
 		//must call the contains() method to check if a given 
 		//team member is in the team already
 		
+		if(currMem.getStartDate().isValid()) {
+			
+			if(cs213.contains(currMem)) {
+				System.out.println("Team member already exists!");
+			}
+			else{
+				cs213.add(currMem);
+			}
+			
+		}
+		
+		else {
+			System.out.println("Date is invalid");
+		}
 		
 		
 	}
@@ -150,8 +170,17 @@ public class ProjectManager
 	private void remove()
 	{
 		//must check if the date is valid
+		if(currMem.getStartDate().isValid()) {
+
+			cs213.remove(currMem);
 		
-		cs213.remove(currMem);
+		}
+
+		else {
+			
+			System.out.println("Date is invalid");
+			
+		}
 
 	}
 
