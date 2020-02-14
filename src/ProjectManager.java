@@ -5,7 +5,7 @@ import java.util.Scanner;
  * Additionally, it adds and removes a TeamMember from a team.
 
 
- @author Jay Mendapara & Raina Gupta
+ @author Jay Mendapara & Raina Gupta 
  */
 
 public class ProjectManager
