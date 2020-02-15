@@ -15,14 +15,13 @@ public class ProjectManager
 	Team cs213;
 
 	private TeamMember currMem;
-	//private Queue<String> tokens = new LinkedList<String>();
 
 	public void run(){
 
 		boolean done = false;
-		
-		cs213 = new Team();
 
+		cs213 = new Team();
+		
 		System.out.println("Welcome!");
 		System.out.println("Your entry must be of the following format: Command (A, R, P, Q) Name Month/Day/Year.");
 
@@ -38,35 +37,38 @@ public class ProjectManager
 			{   
 			case 'A':
 
+				readTeamMember();
+				
+				/*
 				String nameAdd = stdin.next();
 				Date dateAdd = new Date(stdin.next());
-				
+
 				currMem = new TeamMember(nameAdd, dateAdd);
-				
+				*/
+
 				add();
-				
+
 				/*if (instantiateTeamMember(command)) {
-				
+
 					add();
 					System.out.println("Team Member added succesfully");
 					print();
 				}*/
-				
+
 				//break;
 
 			case 'R':
 
 				String nameRemove = stdin.next();
 				Date dateRemove = new Date(stdin.next());
-				
+
 				currMem = new TeamMember(nameRemove, dateRemove);
-				
+
 				remove();
-				break;
+				//break;
 
 			case 'P':
 				print();
-				break;
 
 			case 'Q':
 				done = true;
@@ -86,92 +88,42 @@ public class ProjectManager
 
 	/**
 	 * 
-	 * @param command
 	 */
-	private boolean instantiateTeamMember(String command) {
+	private void readTeamMember() {
 
-		String name;
-		Date date;
-		boolean valid;
-		
-		/*
-		if(!stdin.hasNext()) {
-			System.out.println("Your entry must be of the following format: Command Name Month/Day/Year.");
-			return;
-		}
-		*/
-		
-		//reads in name token
-		String token = stdin.next();
-		System.out.println(token);
-		name = token;
-		
-		//CASE: the user did not enter enough tokens
-		boolean temp = stdin.hasNext("raina");
-		System.out.println(temp);
+		//reading in date and name
+		String name = stdin.next();
+		Date date = new Date(stdin.next());
 
-	/*
-		if(!stdin.hasNext()) {
-			System.out.println("Your entry must be of the following format: Command (A, R, P, Q) Name Month/Day/Year.");
-			return;
-		}
-	*/	
-		
-		//reads in date token
-		token = stdin.next();
-		System.out.println(token);
-		
-
-		//CASE: the user did not enter enough tokens
-
-		/*
-		if (token == null) {
-			System.out.println("Your entry must be of the following format: Command Name Month/Day/Year.");
-			return;
-		}
-		*/
-
-		date = new Date(token);
-
-		valid = date.isValid();
-		
-		if(valid) {	
-			
-			currMem = new TeamMember(name, date);
-
-			System.out.println(currMem.toString());
-			
-			return true;
-		}
-
-		return false;
+		//creating new TeamMember object with console inputs
+		currMem = new TeamMember(name, date);
 
 	}
 
 
 	private void add()
 	{
-		
+
 		//must check if the date is valid
 		//must call the contains() method to check if a given 
 		//team member is in the team already
-		
+
 		if(currMem.getStartDate().isValid()) {
-			
+
 			if(cs213.contains(currMem)) {
 				System.out.println("Team member already exists!");
 			}
 			else{
 				cs213.add(currMem);
 			}
-			
+
 		}
-		
+
 		else {
 			System.out.println("Date is invalid");
 		}
-		
-		
+
+
 	}
 
 	private void remove()
@@ -180,13 +132,13 @@ public class ProjectManager
 		if(currMem.getStartDate().isValid()) {
 
 			cs213.remove(currMem);
-		
+
 		}
 
 		else {
-			
+
 			System.out.println("Date is invalid");
-			
+
 		}
 
 	}
