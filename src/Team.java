@@ -15,15 +15,15 @@ public class Team
 	public Team()
 	{
 		team = new TeamMember[GROW_SIZE];
-		numMembers = GROW_SIZE;
+		numMembers = 0;
 	}
 
 	private int find(TeamMember m)
 	{
 
-		for (int i = 0; i < team.length; i++) {
+		for (int i = 0; i < numMembers; i++) {
 
-			if (team[i] == m) {
+			if (team[i].equals(m)) {
 				return i;
 			}
 
@@ -64,6 +64,7 @@ public class Team
 			System.out.println("This member already exists!");
 			return;
 		}
+		
 		for(int i = team.length-1; i >= 0; i --) {
 
 			if(team[i] != null) {
@@ -87,6 +88,7 @@ public class Team
 
 				team[i] = m;
 				numMembers++;
+				System.out.println(m.toString()+ " has joined the team!");
 				return;
 
 			}
@@ -114,7 +116,7 @@ public class Team
     		   and needs to be swapped with the last team member in the list
 				 * 
 				 */
-				for(int i = team.length-1; i >= index; i --) {
+				for(int i = team.length-1; i > index; i --) {
 
 					if(team[i]!= null) {
 						team[index] = team[i];
@@ -138,7 +140,7 @@ public class Team
 		}
 
 		else {
-			System.out.println("USER NOT FOUND");
+			System.out.println(m.toString()+" is not a team member.");
 			return false;
 		}
 
@@ -146,9 +148,9 @@ public class Team
 
 	public boolean contains(TeamMember m)
 	{
-		for (int i = 0; i < team.length; i++) {
+		for (int i = 0; i < numMembers; i++) {
 
-			if (team[i] == m) {
+			if (team[i].equals(m)) {
 
 				return true;
 

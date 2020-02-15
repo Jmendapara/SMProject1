@@ -38,46 +38,28 @@ public class ProjectManager
 			case 'A':
 
 				readTeamMember();
-				
-				/*
-				String nameAdd = stdin.next();
-				Date dateAdd = new Date(stdin.next());
-
-				currMem = new TeamMember(nameAdd, dateAdd);
-				*/
-
 				add();
-
-				/*if (instantiateTeamMember(command)) {
-
-					add();
-					System.out.println("Team Member added succesfully");
-					print();
-				}*/
-
 				break;
 
 			case 'R':
 
-				String nameRemove = stdin.next();
-				Date dateRemove = new Date(stdin.next());
-
-				currMem = new TeamMember(nameRemove, dateRemove);
-
+				readTeamMember();
 				remove();
-				//break;
+				break;
 
 			case 'P':
+				
 				print();
+				break;
 
 			case 'Q':
 				done = true;
 				break;
 
+			//deal with bad command here 
 			default: 
 				System.out.println("Command '"+ command.charAt(0) +"' is not supported!");
-
-				//deal with bad command here 
+				
 			}  
 		}
 
