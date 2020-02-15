@@ -15,15 +15,15 @@ public class Team
    public Team()
    {
 	  team = new TeamMember[GROW_SIZE];
-	  numMembers = GROW_SIZE;
+	  numMembers = 0;
    }
    
    private int find(TeamMember m)
    {
        
-	   for (int i = 0; i < team.length; i++) {
+	   for (int i = 0; i < numMembers; i++) {
     	   
-    	   if (team[i] == m) {
+    	   if (m.equals(team[i])) {
     		   return i;
     	   }
     	   
@@ -130,9 +130,11 @@ public class Team
    
    public boolean contains(TeamMember m)
    {
-	   for (int i = 0; i < team.length; i++) {
+	   for (int i = 0; i < numMembers; i++) {
+		   
+		   System.out.println(team[i].getStartDate());
     	   
-    	   if (team[i] == m) {
+    	   if (m.equals(team[i])) {
     		   
     		   return true;
     		   
@@ -146,7 +148,7 @@ public class Team
    public void print()
    {
  	  //set up a for loop and call the toString() method
-      for(int i = 0; i < team.length; i ++) {
+      for(int i = 0; i < numMembers; i ++) {
     	  
     	  System.out.println(team[i].toString());
     	  
