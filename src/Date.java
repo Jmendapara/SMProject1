@@ -31,17 +31,17 @@ public class Date
 			case (0):
 				this.month = Integer.parseInt(st.nextToken());
 				counter ++;
-				System.out.println(this.month);
+				//System.out.println(this.month);
 
 			case (1):
 				this.day = Integer.parseInt(st.nextToken());
 				counter ++;
-				System.out.println(this.day);
+				//System.out.println(this.day);
 
 
 			case (2):
 				this.year = Integer.parseInt(st.nextToken());
-				System.out.println(this.year);
+				//System.out.println(this.year);
 				break;
 			}
 
@@ -93,14 +93,14 @@ public class Date
 		if (this.validateMonth()) {
 
 			if (!this.validateDay(leapYear)) {
-				System.out.println(this.day + "is not a valid day.");
+				System.out.println(this.day + " is not a valid day.");
 				return false;
 			}
 
 		}
 
 		else {
-			System.out.println(this.month + "is not a valid month.");
+			System.out.println(this.month + " is not a valid month.");
 			return false;
 		}
 
