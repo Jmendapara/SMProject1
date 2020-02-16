@@ -2,7 +2,7 @@ import java.util.StringTokenizer;
 
 /**
 
- @author  Jay Mendapara & Raina Gupta
+ @author  Jay Mendapara and Raina Gupta
  */
 public class Date 
 {
@@ -61,8 +61,7 @@ public class Date
 	}
 
 	/**
-	 * 
-	 * @param d
+	 * @param d - Date to be instantiated
 	 */
 
 	public Date(Date d)
@@ -77,7 +76,7 @@ public class Date
 
 	/**
 	 * 
-	 * @return
+	 * @return true or false based on if the Date object is valid or invalid
 	 */
 	public boolean isValid()
 	{
@@ -91,7 +90,7 @@ public class Date
 		leapYear = isLeapYear();
 
 		if (this.validateMonth()) {
-
+			
 			if (!this.validateDay(leapYear)) {
 				System.out.println(this.day + " is not a valid day.");
 				return false;
@@ -143,7 +142,6 @@ public class Date
 		else if (this.month == Month.FEB) {
 
 			if (leapYear) {
-
 				if (this.day >= 1 && this.day <= Month.DAYS_FEB+1)
 					return true;
 
@@ -228,6 +226,62 @@ public class Date
 		return false;
 
 	}  
+	
+	public static void main(String [] args) {
+		
+		
+
+		System.out.println("--------TESTING Date CLASS--------");
+
+		Date testDate1 = new Date("05/32/1999");
+		Date testDate2 = new Date("05/09/1999");
+		Date testDate3 = new Date("02/29/2012");
+		Date testDate4 = new Date("02/29/2013");
+		Date testDate5 = new Date("15/29/2013");
+
+		testDate5.validateMonth(); //TEST - invalid month
+		
+		System.out.println(testDate3.isLeapYear()); //TEST - is leap year
+		System.out.println(testDate4.isLeapYear()); //TEST - is not leap year
+		
+		boolean leapYr = testDate2.isLeapYear();
+		System.out.println(testDate2.validateDay(leapYr)); //TEST - valid day
+		
+		leapYr = testDate1.isLeapYear();
+		System.out.println(testDate1.validateDay(leapYr)); //TEST - invalid day
+
+		System.out.println(testDate4.validateMonth()); //TEST - valid month
+		System.out.println(testDate5.validateMonth()); //TEST - invalid month
+
+
+		
+
+		boolean valid;
+
+		// TEST - false case for Date isValid()
+		valid = testDate1.isValid();
+		System.out.println("Date : " + testDate1.toString() + " isValid() = " + valid);
+
+		// TEST - true case for Date isValid()
+		valid = testDate2.isValid();
+		System.out.println("Date : " + testDate2.toString() + " isValid() = " + valid);
+
+		// TEST - true case for Date isValid() on a leap year
+		valid = testDate3.isValid();
+		System.out.println("Date : " + testDate3.toString() + " isValid() = " + valid);
+		
+		// TEST - false case for Date isValid() on a not leap year
+		valid = testDate4.isValid();
+		System.out.println("Date : " + testDate4.toString() + " isValid() = " + valid);
+
+
+		System.out.println("Date toString : " + testDate2.toString()); //TEST - Date toString
+
+		
+		System.out.println("--------END TESTING Date CLASS--------\n");
+		
+		
+	}
 }
 
 

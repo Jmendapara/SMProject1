@@ -105,12 +105,15 @@ public class TeamMember
 		result = test.equals(compare2);
 		System.out.println("TEST - this.equals(Object obj) where this = " + test.toString() + " and obj = " + compare2.toString());
 		System.out.println("Result = " + result);
+		
+		
+		TeamMember jay = new TeamMember("Jay", new Date("12/1/2014"));
+		System.out.println(jay.getStartDate().toString()); //TEST - getStartDate();
 
 		System.out.println("--------END TESTING TeamMember CLASS--------\n");
 		System.out.println("--------TESTING Team CLASS--------");
 
 		// creating instances of TeamMember
-		TeamMember jay = new TeamMember("Jay", new Date("12/1/2014"));
 		TeamMember bob = new TeamMember("Bob", new Date("9/31/2016")); // Last date (31th) of odd month
 		TeamMember al = new TeamMember("Al", new Date("2/29/2012")); // Leap year date
 		TeamMember jenny = new TeamMember("Jenny", new Date("6/30/2005")); // Last date (30th) of even month
@@ -119,6 +122,7 @@ public class TeamMember
 
 
 		testTeam.add(jay);
+		
 
 		System.out.println("Adding a team member that already exists:");
 		testTeam.add(bob);

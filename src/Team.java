@@ -1,7 +1,8 @@
-
 /**
-
- @author  
+ * Represents a list of TeamMembers
+ * Can be of any size
+ * 
+ @author  Jay Mendapara and Raina Gupta
  */
 public class Team 
 {
@@ -10,7 +11,9 @@ public class Team
 	private TeamMember [] team;
 	private int numMembers;
 
-
+	/**
+	 * Creates a new Team of size GROW_SIZE
+	 */
 	//this is Team class
 	public Team()
 	{
@@ -64,7 +67,7 @@ public class Team
 			System.out.println("This member already exists!");
 			return;
 		}
-		
+
 		for(int i = team.length-1; i >= 0; i --) {
 
 			if(team[i] != null) {
