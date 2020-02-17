@@ -63,7 +63,6 @@ public class Date {
 	public boolean isValid() {
 		
 		if (st.hasMoreTokens()) {
-			System.out.println("This is an invalid date.");
 			return false;
 		}
 
@@ -73,14 +72,12 @@ public class Date {
 		if (this.validateMonth()) {
 			
 			if (!this.validateDay(leapYear)) {
-				System.out.println(this.day + " is not a valid day.");
 				return false;
 			}
 
 		}
 
 		else {
-			System.out.println(this.month + " is not a valid month.");
 			return false;
 		}
 
