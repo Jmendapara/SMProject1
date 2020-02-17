@@ -1,40 +1,37 @@
 import java.util.Scanner;
 
 /**
- * ProjectManager class scans the user's input and parses through it- reads command and validates date.
- * Additionally, it adds and removes a TeamMember from a team.
-
-
- @author Jay Mendapara & Raina Gupta 
+ ProjectManager class scans the user's input and parses through it- reads command and validates date.
+ Additionally, it adds and removes TeamMember objects from a team.
+ @author Jay Mendapara
+ @author Raina Gupta 
  */
-
-public class ProjectManager
-{
+public class ProjectManager {
 
 	Scanner stdin = new Scanner(System.in);
 	Team cs213;
 
 	private TeamMember currMem;
 
-	public void run(){
+	/**
+	 * Starts the project manager.
+	 * Scans user input for commands and key information about a team member.
+	 */
+	public void run() {
 
 		boolean done = false;
 
 		cs213 = new Team();
 		
 		System.out.println("Welcome!");
-		System.out.println("Your entry must be of the following format: Command (A, R, P, Q) Name Month/Day/Year.");
+		System.out.println("Your entry must be of the following format: Command ('A', 'R', 'P', 'Q') Name Date (Month/Day/Year).");
 
-
-		while (!done)
-		{
+		while (!done) {
 
 			String command = stdin.next();
 
-			System.out.println("command is " + command);
+			switch (command.charAt(0)) {
 
-			switch (command.charAt(0))  
-			{   
 			case 'A':
 
 				readTeamMember();
@@ -58,8 +55,17 @@ public class ProjectManager
 
 			//deal with bad command here 
 			default: 
-				System.out.println("Command '"+ command.charAt(0) +"' is not supported!");
 				
+				if(command.charAt(0)=='q' || command.charAt(0)=='p') {
+					System.out.println("Command '"+ command.charAt(0) +"' is not supported!");
+				}
+
+				else {
+					stdin.next();
+					stdin.next();
+					System.out.println("Command '"+ command.charAt(0) +"' is not supported!");
+				}
+
 			}  
 		}
 
@@ -69,7 +75,8 @@ public class ProjectManager
 	} //run()
 
 	/**
-	 * 
+	 * Captures the name and start date from what the user entered. 
+	 * Uses the values entered by the user to create a TeamMember object.
 	 */
 	private void readTeamMember() {
 
@@ -79,16 +86,13 @@ public class ProjectManager
 
 		//creating new TeamMember object with console inputs
 		currMem = new TeamMember(name, date);
-
 	}
 
-
-	private void add()
-	{
-
-		//must check if the date is valid
-		//must call the contains() method to check if a given 
-		//team member is in the team already
+	/**
+	 * Adds the TeamMember object to the team.
+	 * Validates date of the TeamMember and verifies TeamMember is not in the team before adding.
+	 */
+	private void add() {
 
 		if(currMem.getStartDate().isValid()) {
 
@@ -98,37 +102,33 @@ public class ProjectManager
 			else{
 				cs213.add(currMem);
 			}
-
 		}
 
 		else {
-			System.out.println("Date is invalid");
+			System.out.println(currMem.getStartDate().toString()+" is not a valid date!");
 		}
-
-
 	}
 
-	private void remove()
-	{
-		//must check if the date is valid
+	/**
+	 * Removes the TeamMember object from the team.
+	 * Validates date of the TeamMember before removing.
+	 */
+	private void remove() {
+
 		if(currMem.getStartDate().isValid()) {
-
 			cs213.remove(currMem);
-
 		}
 
 		else {
-
-			System.out.println("Date is invalid");
-
+			System.out.println(currMem.getStartDate().toString()+" is not a valid date!");
 		}
-
 	}
 
-	private void print()
-	{
+	/**
+	 * Prints the list of TeamMembers currently on the team.
+	 */
+	private void print() {
 
-		//must check if the team has 0 members. 
 		if(cs213.isEmpty()) {
 			System.out.println("We have 0 team members!");
 		}
@@ -136,6 +136,5 @@ public class ProjectManager
 		else {
 			cs213.print();
 		}
-
-	}   
+	}
 } //ProjectManager
