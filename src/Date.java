@@ -233,6 +233,11 @@ public class Date
 
 		System.out.println("--------TESTING Date CLASS--------");
 
+		Date test = new Date("12/13/2017");
+		Date test2 = new Date(test);
+		System.out.println(test2.toString());
+		
+		
 		Date testDate1 = new Date("05/32/1999");
 		Date testDate2 = new Date("05/09/1999");
 		Date testDate3 = new Date("02/29/2012");
