@@ -1,12 +1,20 @@
 /**
- * This class creates a TeamMember object and compares TeamMember objects with each other. 
- @author  Raina Gupta & Jay Mendapara
+ This class is a template for a TeamMember object.
+ Has the ability to compares TeamMember objects with each other. 
+ @author Jay Mendapara
+ @author Raina Gupta
  */
 public class TeamMember 
 {
 	private String name;
 	private Date   startDate;
 
+	
+	/**
+	 * Constructor for TeamMember class.
+	 * @param nm  name of the team member
+	 * @param date  start date of the team member
+	 */
 	public TeamMember(String nm, Date date)
 	{
 		this.name = nm;
@@ -14,48 +22,51 @@ public class TeamMember
 
 	}
 
+	/**
+	 * Obtains the date that the team member started working.
+	 * @return  a Date object containing the start date of the team member
+	 */
 	public Date getStartDate()
 	{
 		return this.startDate;
 	}
 
+	/**
+	 * Compares two TeamMember objects to check if they have the same name and start date. 
+	 * @param obj  TeamMember object being compared
+	 * @return  true if both TeamMembers are equal, false otherwise
+	 */
 	public boolean equals(Object obj)
 	{
-		//name and startDate must be the same
-
 		if(obj instanceof TeamMember){	
 
-			//obj.getClass() == (new TeamMember(name, startDate).getClass())
-			//obj = TeamMember.class.cast(obj);
-
 			TeamMember temp = (TeamMember)obj;
-
+			
 			if (this.name.equals(temp.name) && (this.startDate.equals(temp.startDate))) {
-
 				return true;
-
 			}
-
 		}
 
 		//if obj is not of type Team Member or does not match the current name/startDate
 		return false;
-
-
 	}  
 
+	/**
+	 * Formats the TeamMember information into a String. 
+	 * @return  String format of the TeamMember that includes name and start date
+	 */
 	public String toString()
 	{
 		return this.name + " " + this.startDate.toString();
-		//name + " " + startDate;
 	}
 
+	/**
+	 * Main method that includes various testing scenarios for the TeamMember class.
+	 * @param args  default main method argument
+	 */
 	public static void main(String [] args)
 	{
-		//testbed main; you must include test cases that exercise 
-		//the constructor and all methods in this class.
-
-
+		
 		System.out.println("--------TESTING Date CLASS--------");
 
 		Date testDate1 = new Date("05/32/1999");
