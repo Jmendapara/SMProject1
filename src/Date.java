@@ -1,7 +1,7 @@
 import java.util.StringTokenizer;
 
 /**
- This class defines a Date.
+ This class defines a Date and validates it.
  @author Jay Mendapara
  @author Raina Gupta
  */
