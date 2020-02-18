@@ -107,8 +107,9 @@ public class Date {
 	 */
 	private boolean validateDay(boolean leapYear) {
 
-		if (this.month == Month.JAN || this.month == Month.MAR || this.month == Month.MAY 
-				|| this.month == Month.JUL || this.month == Month.AUG || this.month == Month.OCT
+		if (this.month == Month.JAN || this.month == Month.MAR 
+				|| this.month == Month.MAY || this.month == Month.JUL 
+				|| this.month == Month.AUG || this.month == Month.OCT 
 				|| this.month == Month.DEC) {
 
 			if (this.day >= 1 && this.day <= Month.DAYS_ODD)
@@ -119,7 +120,7 @@ public class Date {
 		else if (this.month == Month.FEB) {
 
 			if (leapYear) {
-				if (this.day >= 1 && this.day <= Month.DAYS_FEB+1)
+				if (this.day >= 1 && this.day <= Month.DAYS_FEB + 1)
 					return true;
 			}
 			else {

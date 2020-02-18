@@ -56,14 +56,14 @@ public class ProjectManager {
 			//deal with bad command here 
 			default: 
 				
-				if(command.charAt(0)=='q' || command.charAt(0)=='p') {
-					System.out.println("Command '"+ command.charAt(0) +"' is not supported!");
+				if(command.charAt(0) == 'q' || command.charAt(0) == 'p') {
+					System.out.println("Command '" + command.charAt(0) + "' is not supported!");
 				}
 
 				else {
 					stdin.next();
 					stdin.next();
-					System.out.println("Command '"+ command.charAt(0) +"' is not supported!");
+					System.out.println("Command '" + command.charAt(0) + "' is not supported!");
 				}
 
 			}  
@@ -105,7 +105,7 @@ public class ProjectManager {
 		}
 
 		else {
-			System.out.println(currMem.getStartDate().toString()+" is not a valid date!");
+			System.out.println(currMem.getStartDate().toString() + " is not a valid date!");
 		}
 	}
 
@@ -120,7 +120,7 @@ public class ProjectManager {
 		}
 
 		else {
-			System.out.println(currMem.getStartDate().toString()+" is not a valid date!");
+			System.out.println(currMem.getStartDate().toString() + " is not a valid date!");
 		}
 	}
 

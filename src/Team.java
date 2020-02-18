@@ -28,7 +28,7 @@ public class Team {
 	 */
 	private int find(TeamMember m) {
 
-		for (int i = 0; i < numMembers; i++) {
+		for (int i = 0; i < numMembers; i ++) {
 
 			if (team[i].equals(m)) {
 				return i;
@@ -48,7 +48,7 @@ public class Team {
 		int currentTeamSize = team.length;
 		TeamMember [] newTeam =  new TeamMember[currentTeamSize + GROW_SIZE];
 
-		for(int i = 0; i < team.length; i++) {
+		for(int i = 0; i < team.length; i ++) {
 			newTeam[i] = team[i];
 		}
 
@@ -87,14 +87,14 @@ public class Team {
 				if (i == team.length-1) {
 					grow();
 					team[i+1] = m;
-					System.out.println(m.toString()+ " has joined the team!");
-					numMembers++;
+					System.out.println(m.toString() + " has joined the team!");
+					numMembers ++;
 					return;
 				}
 
 				team[i+1] = m;
-				System.out.println(m.toString()+ " has joined the team!");
-				numMembers++;
+				System.out.println(m.toString() + " has joined the team!");
+				numMembers ++;
 				return;
 
 			}
@@ -102,8 +102,8 @@ public class Team {
 			else if(i == 0) {
 
 				team[i] = m;
-				numMembers++;
-				System.out.println(m.toString()+ " has joined the team!");
+				numMembers ++;
+				System.out.println(m.toString() + " has joined the team!");
 				return;
 
 			}
@@ -126,8 +126,8 @@ public class Team {
 			// case - team member to be removed is the last element in the array
 			if(index == team.length-1) {
 				team[index] = null;
-				System.out.println(m.toString()+ " has left the team!");
-				numMembers--;
+				System.out.println(m.toString() + " has left the team!");
+				numMembers --;
 				return true;
 			}
 
@@ -139,8 +139,8 @@ public class Team {
 					if(team[i]!= null) {
 						team[index] = team[i];
 						team[i] = null;
-						System.out.println(m.toString()+ " has left the team!");
-						numMembers--;
+						System.out.println(m.toString() + " has left the team!");
+						numMembers --;
 						return true;
 					}
 
@@ -155,7 +155,7 @@ public class Team {
 		}
 
 		else {
-			System.out.println(m.toString()+" is not a team member.");
+			System.out.println(m.toString() + " is not a team member.");
 			return false;
 		}
 	} 
@@ -167,7 +167,7 @@ public class Team {
 	 */
 	public boolean contains(TeamMember m) {
 		
-		for (int i = 0; i < numMembers; i++) {
+		for (int i = 0; i < numMembers; i ++) {
 
 			if (team[i].equals(m)) {
 				return true;
